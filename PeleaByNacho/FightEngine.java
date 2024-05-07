@@ -52,7 +52,6 @@ public class FightEngine {
                 break;
             case 2: // Defender
                 System.out.println("Te has defendido.");
-                // Implementar lógica de defensa si es necesario
                 break;
             case 3: // Poder Especial
                 System.out.println("Has usado tu poder especial.");
@@ -85,7 +84,6 @@ public class FightEngine {
                 break;
             case 2: // Defender
                 System.out.println("Enemigo se defiende.");
-                // Implementar lógica de defensa si es necesario
                 break;
             case 3: // Poder Especial
                 resultado = enemigo.poderEspecial();
