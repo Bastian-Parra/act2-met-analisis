@@ -6,7 +6,7 @@ public interface luchador {
     String defender();
     String poderEspecial();
     String usarArma();
-
+    
     void recibirDano(int dano);
     boolean estaVivo();
     int getVidaMaxima();
