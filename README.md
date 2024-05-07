@@ -1,4 +1,4 @@
-/----------------------------------------------------------------------------------------------------------------------------------------------------/
+/----------------------------------------------------------------------------------------------------------------------/
 
 Ficha de requerimiento: Creación
 
@@ -8,7 +8,7 @@ Solución: Separar la construcción de objetos de representación y así permiti
 Patrón a aplicar: Builder
 https://refactoring.guru/es/design-patterns/builder/java/example#:~:text=Builder%20es%20un%20patrón%20de,el%20mismo%20proceso%20de%20construcción.
 
-/----------------------------------------------------------------------------------------------------------------------------------------------------/
+/----------------------------------------------------------------------------------------------------------------------/
 
 
 Ficha de requerimiento: Comportamiento
@@ -23,7 +23,7 @@ Solución: Crear varias clases que representen los estados del personaje, cada u
 Patrón a aplicar: Sate
 https://refactoring.guru/es/design-patterns/state/java/example
 
-/----------------------------------------------------------------------------------------------------------------------------------------------------/
+/----------------------------------------------------------------------------------------------------------------------/
 
 
 Ficha de requerimiento: Estructural
@@ -33,5 +33,5 @@ Solución: Permitir que los luchadores puedan adquirir nuevas habilidades de ata
 Patrón a aplicar: Decorator
 https://refactoring.guru/es/design-patterns/decorator/java/example
 
-/----------------------------------------------------------------------------------------------------------------------------------------------------/
+/----------------------------------------------------------------------------------------------------------------------/
 
