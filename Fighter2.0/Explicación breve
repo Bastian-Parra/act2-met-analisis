@@ -1,0 +1,23 @@
+1.-
+
+Interfaz luchador: Define las operaciones básicas que cualquier luchador en el juego debe implementar. 
+Incluye métodos para atacar, defender, usar un poder especial, usar un arma, recibir daño y comprobar si el luchador está vivo.
+
+Clase Abstracta BaseLuchador: Implementa la interfaz luchador, proporcionando una base para todos los luchadores 
+con implementaciones comunes de métodos como golpear(), defender(), recibirDano(), y estaVivo(). Esta clase también 
+declara métodos abstractos que deben ser implementados por las subclases específicas, como poderEspecial() y usarArma().
+
+2. 
+Clase Guerrero: Una subclase de BaseLuchador que representa un guerrero con habilidades específicas para el combate cuerpo a cuerpo. 
+Implementa los métodos para ataques especiales y el uso de armas, específicamente diseñados para un guerrero.
+
+Clase Mago: Otra subclase de BaseLuchador que representa un mago con habilidades mágicas. Implementa los métodos para ataques 
+especiales y el uso de armas mágicas, adecuados para un personaje con habilidades en hechicería.
+
+3. 
+Clase FightEngine: Gestiona la lógica del combate entre el jugador y el enemigo. Incluye métodos para iniciar el combate, 
+gestionar los turnos del jugador y del enemigo, y ejecutar las acciones seleccionadas por el jugador y determinadas aleatoriamente para el enemigo.
+
+4. Clase de Mejoras MejorasLuchador
+Gestión de Mejoras: Maneja la mejora de habilidades y equipamiento de los luchadores basado en la experiencia ganada. 
+Permite aumentar la vida, el poder de ataque, recuperar completamente la vida, y cambiar el poder especial y el arma del luchador.
