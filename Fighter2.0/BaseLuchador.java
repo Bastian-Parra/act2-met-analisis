@@ -1,14 +1,16 @@
 /* BaseLuchador es una clase abstracta que implementa la interfaz luchador.
 Define las propiedades y métodos comunes para todos los tipos de luchadores en el juego.*/
+import java.util.List;
 
 public abstract class BaseLuchador implements luchador {
     protected int vida;
     protected int vidaMaxima;
 
+
     private EstadoAtaque estadoAtaque;
     // Contador para los ataques consecutivos.
     private int contadorAtaques;
-//constructor
+    //constructor
     public BaseLuchador(int vidaInicial) {
         this.estadoAtaque = new EstadoAtaqueNormal();
         this.contadorAtaques = 0;

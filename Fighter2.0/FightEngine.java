@@ -50,7 +50,7 @@ public class FightEngine {
     }
     // Método para manejar el turno del jugador, permitiendo seleccionar la acción a realizar.
     private void turnoJugador() {
-        System.out.println("Elige tu acción: 1-Golpear, 2-Defender, 3-Poder Especial, 4-Usar Arma");
+        System.out.println("Elige tu acción: 1-Golpear, 2-Defender, 3-Poder Especial, 4-Usar Arma, 5-Abrir tienda");
         int eleccion = scanner.nextInt();
     
         switch (eleccion) {

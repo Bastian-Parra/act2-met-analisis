@@ -2,10 +2,12 @@ public class Guerrero extends BaseLuchador{
     private double factorPoderAtaque = 1.0;
     private String poderEspecialActual = "Tormenta de Espadas";  // Valor predeterminado
     private String armaActual = "Espada";
+    private int dinero = 50;
 
     public Guerrero(int vidaInicial) {
         super(vidaInicial);
     }
+
 
     @Override
     public void incrementarPoderAtaque(double porcentaje) {

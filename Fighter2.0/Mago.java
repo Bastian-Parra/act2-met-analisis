@@ -2,11 +2,12 @@ public class Mago extends BaseLuchador {
     private double factorPoderAtaque = 1.0;
     private String poderEspecialActual = "Bola de Fuego";  // Poder especial inicial
     private String armaActual = "Bastón Mágico";  // Arma inicial
+    private int dinero = 50;
 
     public Mago(int vidaInicial) {
         super(vidaInicial);
     }
-
+    
     @Override
     public void incrementarPoderAtaque(double porcentaje) {
         this.factorPoderAtaque += porcentaje;
