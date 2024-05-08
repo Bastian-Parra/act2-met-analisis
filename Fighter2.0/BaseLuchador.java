@@ -2,7 +2,7 @@
 Define las propiedades y métodos comunes para todos los tipos de luchadores en el juego.*/
 import java.util.List;
 
-public abstract class BaseLuchador implements luchador {
+public abstract class BaseLuchador implements Luchador {
     protected int vida;
     protected int vidaMaxima;
 

@@ -1,4 +1,4 @@
-public interface luchador {
+public interface Luchador {
 
     int getVida();
     void setVida(int vida);

@@ -6,14 +6,14 @@ import java.util.Scanner;
  */
 public class FightEngine {
 
-    private luchador jugador;
-    private luchador enemigo;
+    private Luchador jugador;
+    private Luchador enemigo;
 
     // Scanner para capturar la entrada del usuario durante el combate.
     private Scanner scanner = new Scanner(System.in);
     
     // Constructor que inicializa el motor de lucha
-    public FightEngine(luchador jugador, luchador enemigo) {
+    public FightEngine(Luchador jugador, Luchador enemigo) {
         this.jugador = jugador;
         this.enemigo = enemigo;
     }

@@ -12,5 +12,5 @@ public interface EstadoAtaque {
      * Esto permite que el estado acceda a métodos y propiedades del luchador para realizar operaciones como modificar el contador de ataques,
      * cambiar el estado del luchador, o simplemente ejecutar el ataque y devolver una descripción del mismo.
      */
-    String atacar(luchador luchador);
+    String atacar(Luchador luchador);
 }
