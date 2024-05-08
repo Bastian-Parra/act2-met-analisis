@@ -24,11 +24,13 @@ public class Guerrero extends BaseLuchador{
 
     @Override
     public String poderEspecial() {
+        resetearContadorAtaque();
         return poderEspecialActual + " - 30 de daño";
     }
 
     @Override
     public String usarArma() {
+        resetearContadorAtaque();
         return "Ataque con " + armaActual + " - 15 de daño";
     }
 
