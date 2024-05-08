@@ -1,0 +1,53 @@
+1.-
+
+Interfaz luchador: Define las operaciones básicas que cualquier luchador en el juego debe implementar. 
+Incluye métodos para atacar, defender, usar un poder especial, usar un arma, recibir daño y comprobar si el luchador está vivo.
+
+Clase Abstracta BaseLuchador: Implementa la interfaz luchador, proporcionando una base para todos los luchadores 
+con implementaciones comunes de métodos como golpear(), defender(), recibirDano(), y estaVivo(). Esta clase también 
+declara métodos abstractos que deben ser implementados por las subclases específicas, como poderEspecial() y usarArma().
+
+2. 
+Clase Guerrero: Una subclase de BaseLuchador que representa un guerrero con habilidades específicas para el combate cuerpo a cuerpo. 
+Implementa los métodos para ataques especiales y el uso de armas, específicamente diseñados para un guerrero.
+
+Clase Mago: Otra subclase de BaseLuchador que representa un mago con habilidades mágicas. Implementa los métodos para ataques 
+especiales y el uso de armas mágicas, adecuados para un personaje con habilidades en hechicería.
+
+3. 
+Clase FightEngine: Gestiona la lógica del combate entre el jugador y el enemigo. Incluye métodos para iniciar el combate, 
+gestionar los turnos del jugador y del enemigo, y ejecutar las acciones seleccionadas por el jugador y determinadas aleatoriamente para el enemigo.
+
+4. Clase de Mejoras MejorasLuchador
+Gestión de Mejoras: Maneja la mejora de habilidades y equipamiento de los luchadores basado en la experiencia ganada. 
+Permite aumentar la vida, el poder de ataque, recuperar completamente la vida, y cambiar el poder especial y el arma del luchador.
+
+--.--
+
+Implementación y Justificación del Método atacar() en el Contexto del Patrón State
+
+Implementación:
+En el contexto del patrón State:
+
+Estado Ataque Normal: En este estado, el método atacar() de un luchador implementa un ataque básico. Cada vez que se realiza un ataque, 
+el contador de ataques se incrementa. Si el contador alcanza tres ataques consecutivos, se activa un cambio de estado.
+
+Estado Ataque Potenciado: Una vez activado, este estado modifica el método atacar() para ejecutar un ataque más potente, 
+con mayor daño }. Tras realizar este ataque potenciado, el estado del luchador se resetea al estado normal.
+
+Justificación:
+Flexibilidad y Dinamismo en el Comportamiento de Ataque:
+El patrón State permite modificar el comportamiento de atacar() sin cambiar la interfaz luchador ni las clases que dependen de ella. 
+Esto proporciona una gran flexibilidad, ya que se pueden introducir nuevos estados de ataque sin alterar el resto del sistema.
+
+Encapsulación y Separación de Responsabilidades:
+Cada estado encapsula completamente la lógica específica para el tipo de ataque que representa. 
+Esto simplifica el mantenimiento y la expansión del código, ya que los cambios en la lógica de ataque de un estado no afectan a los otros.
+
+Manejo de Estado Localizado:
+Al manejar el cambio de estado dentro de los métodos atacar() específicos de cada estado, se localiza el control de cambios. 
+Esto elimina la necesidad de una lógica de control dispersa a través de la clase BaseLuchador o el motor del juego, centralizando la lógica de cambio en un lugar coherente y controlado.
+
+Ciclo de Vida del Estado de Ataque:
+La implementación permite un ciclo claro y definido de comportamientos de ataque, donde cada ataque contribuye 
+al progreso hacia un ataque potenciado y cada ataque potenciado resetea el sistema para comenzar el ciclo nuevamente.
