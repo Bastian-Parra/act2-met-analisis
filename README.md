@@ -6,7 +6,7 @@ Requerimiento: Permitir que los luchadores puedan equiparse con diferentes conju
 
 /----------------------------------------------------------------------------------------------------------------------/
 
-Ficha de requerimiento: Comportamiento Requerimiento: Implementar una mecánica donde un personaje pueda ejecutar un ataque más poderoso luego de realizar el mismo ataque más de 3 veces. Problema: Los personajes necesitan un sistema que les permita mejorar sus habilidades de ataque de forma dinámica, Solución: Crear varias clases que representen los estados del personaje, cada una correspondiente a un nivel de habilidad de ataque.
+Ficha de requerimiento: Comportamiento Requerimiento: Implementar una mecánica donde un personaje pueda ejecutar un ataque más poderoso luego de realizar el mismo ataque más de 3 veces (en este caso solo para el atacar). Problema: Los personajes necesitan un sistema que les permita mejorar sus habilidades de ataque de forma dinámica, Solución: Crear varias clases que representen los estados del personaje, cada una correspondiente a un nivel de habilidad de ataque.
 
 (if AtaqueNormal > 3: Change AtaqueFuerte() )
 
