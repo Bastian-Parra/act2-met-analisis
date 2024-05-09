@@ -6,22 +6,25 @@ import java.util.Scanner;
  */
 public class FightEngine {
 
-    private luchador jugador;
+    private ProxyHabilidadLuchador jugador;
     private luchador enemigo;
 
     // Scanner para capturar la entrada del usuario durante el combate.
     private Scanner scanner = new Scanner(System.in);
     
     // Constructor que inicializa el motor de lucha
-    public FightEngine(luchador jugador, luchador enemigo) {
+    public FightEngine(ProxyHabilidadLuchador jugador, luchador enemigo) {
         this.jugador = jugador;
         this.enemigo = enemigo;
     }
+
     // Método para iniciar y gestionar el combate hasta que uno de los luchadores pierda
     public void iniciarCombate() {
         int ronda = 1;
         while (jugador.estaVivo() && enemigo.estaVivo()) {
-            System.out.println("Ronda " + ronda++);
+            System.out.println("Ronda " + ronda);
+            jugador.setRondaActual(ronda);
+            ronda++;
             turnoJugador();
             if (enemigo.estaVivo()) {
                 turnoEnemigo();
@@ -34,8 +37,9 @@ public class FightEngine {
             System.out.println("GAME OVER");
         }
     }
+
     // Método para calcular el daño basado en la descripción del ataque.
-    //formato de la descripción (ejemplo): "Ataque con Espada - 15 de daño"
+    // Formato de la descripción (ejemplo): "Ataque con Espada - 15 de daño"
     private int danoDesdeAccion(String descripcion) {
         String[] partes = descripcion.split(" - ");
         if (partes.length > 1) {
@@ -48,40 +52,43 @@ public class FightEngine {
         }
         return 0;
     }
+
     // Método para manejar el turno del jugador, permitiendo seleccionar la acción a realizar.
     private void turnoJugador() {
         System.out.println("Elige tu acción: 1-Golpear, 2-Defender, 3-Poder Especial, 4-Usar Arma");
         int eleccion = scanner.nextInt();
+        String resultado;
     
         switch (eleccion) {
             case 1: // Golpear
-                System.out.println("Has elegido golpear.");
-                String resultado = jugador.atacar();
+                resultado = jugador.atacar();
                 System.out.println(resultado);
                 enemigo.recibirDano(danoDesdeAccion(resultado));
                 break;
             case 2: // Defender
-                System.out.println("Te has defendido.");
-                //falta implementar la defensa, solo dice que te defiendes
-                //pero el enemigo te hace daño igual
+                resultado = jugador.defender();
+                System.out.println(resultado);
                 break;
             case 3: // Poder Especial
-                System.out.println("Has usado tu poder especial.");
                 resultado = jugador.poderEspecial();
                 System.out.println(resultado);
-                enemigo.recibirDano(danoDesdeAccion(resultado));
+                if (!resultado.contains("¡No has alcanzado")) {
+                    enemigo.recibirDano(danoDesdeAccion(resultado));
+                }
                 break;
             case 4: // Usar Arma
-                System.out.println("Has usado tu arma.");
                 resultado = jugador.usarArma();
                 System.out.println(resultado);
-                enemigo.recibirDano(danoDesdeAccion(resultado));
+                if (!resultado.contains("¡No has alcanzado")) {
+                    enemigo.recibirDano(danoDesdeAccion(resultado));
+                }
                 break;
             default:
                 System.out.println("Opción inválida, pierdes tu turno.");
                 break;
         }
     }
+
     // Método para manejar el turno del enemigo, determinando aleatoriamente la acción a realizar.
     private void turnoEnemigo() {
         int accion = new Random().nextInt(3) + 1;
@@ -95,9 +102,8 @@ public class FightEngine {
                 jugador.recibirDano(danoDesdeAccion(resultado));
                 break;
             case 2: // Defender
-                System.out.println("Enemigo se defiende.");
-                //falta implementar la defensa, solo dice que se defiende
-                //pero le haces daño igual
+                resultado = enemigo.defender();
+                System.out.println(resultado);
                 break;
             case 3: // Poder Especial
                 resultado = enemigo.poderEspecial();
