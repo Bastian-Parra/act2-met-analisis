@@ -6,14 +6,14 @@ import java.util.Scanner;
  */
 public class FightEngine {
 
-    private Luchador jugador;
-    private Luchador enemigo;
+    private luchador jugador;
+    private luchador enemigo;
 
     // Scanner para capturar la entrada del usuario durante el combate.
     private Scanner scanner = new Scanner(System.in);
     
     // Constructor que inicializa el motor de lucha
-    public FightEngine(Luchador jugador, Luchador enemigo) {
+    public FightEngine(luchador jugador, luchador enemigo) {
         this.jugador = jugador;
         this.enemigo = enemigo;
     }
@@ -50,7 +50,7 @@ public class FightEngine {
     }
     // Método para manejar el turno del jugador, permitiendo seleccionar la acción a realizar.
     private void turnoJugador() {
-        System.out.println("Elige tu acción: 1-Golpear, 2-Defender, 3-Poder Especial, 4-Usar Arma, 5-Abrir tienda");
+        System.out.println("Elige tu acción: 1-Golpear, 2-Defender, 3-Poder Especial, 4-Usar Arma");
         int eleccion = scanner.nextInt();
     
         switch (eleccion) {

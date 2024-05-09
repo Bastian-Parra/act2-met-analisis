@@ -1,6 +1,6 @@
 public class EstadoAtaqueNormal implements EstadoAtaque {
     @Override
-    public String atacar(Luchador luchador) {
+    public String atacar(luchador luchador) {
         if (luchador instanceof BaseLuchador) {
             BaseLuchador baseLuchador = (BaseLuchador) luchador;
             baseLuchador.incrementarContadorAtaque();
